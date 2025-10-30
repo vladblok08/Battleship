@@ -1,12 +1,12 @@
 import random
 
 
-# Класс исключения для выхода за пределы поля
+# Exception class for out-of-bounds fieldода за пределы поля
 class BoardOutException(Exception):
     pass
 
 
-# Класс точки на поле
+# Class of a point on the field
 class Dot:
     def __init__(self, x, y):
         self.x = x
@@ -16,7 +16,7 @@ class Dot:
         return self.x == other.x and self.y == other.y
 
 
-# Класс корабля
+# Ship class
 class Ship:
     def __init__(self, length, bow, direction):
         self.length = length
@@ -34,7 +34,7 @@ class Ship:
         return ship_dots
 
 
-# Класс игровой доски
+# Game board class
 class Board:
     def __init__(self, hidden=False):
         self.field = [[' '] * 6 for _ in range(6)]
@@ -109,7 +109,7 @@ class Board:
         return self.get_board()
 
 
-# Класс игрока
+# Player class
 class Player:
     def __init__(self, board, enemy_board):
         self.board = board
@@ -132,7 +132,7 @@ class Player:
 
 
 
-# Класс игрока-пользователя
+# Player-user class
 class User(Player):
     def ask(self):
         while True:
@@ -162,7 +162,7 @@ class User(Player):
                 print(e)
 
 
-# Класс игрока-компьютера
+# Computer player class
 class AI(Player):
     def ask(self):
         x = random.randint(0, 5)
@@ -170,7 +170,7 @@ class AI(Player):
         return Dot(x, y)
 
 
-# Класс игры
+# Game class
 class Game:
     def __init__(self):
         self.user_board = Board()
