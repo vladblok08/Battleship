@@ -24,5 +24,4 @@ Game - controls the game process
 Random ship placement
 Collision and boundary validation
 Simple console interface
-Author
 Author: <vladblok08>
